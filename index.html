@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Chen | Designer & Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #333;
+            --secondary-color: #666;
+            --border-color: #eee;
+            --note-bg: #f9f9f9;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--primary-color);
+            background-color: #fff;
+            padding: 50px;
+            font-size: 16px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 30px 20px;
+                font-size: 15px;
+            }
+        }
+
+        /* Header */
+        header {
+            margin-bottom: 70px;
+            text-align: center;
+            position: relative;
+        }
+
+        header:after {
+            content: '';
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-color);
+            opacity: 0.2;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 300;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+            position: relative;
+            display: inline-block;
+        }
+
+        h1:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: var(--primary-color);
+            opacity: 0.1;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--secondary-color);
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-top: 25px;
+        }
+
+        /* Navigation */
+        nav {
+            margin-bottom: 60px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        nav a {
+            margin: 0 25px;
+            text-decoration: none;
+            color: var(--primary-color);
+            font-size: 0.95rem;
+            letter-spacing: 1.5px;
+            font-weight: 300;
+            position: relative;
+            padding-bottom: 5px;
+            transition: var(--transition);
+        }
+
+        nav a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: #000;
+        }
+
+        nav a:hover:after {
+            width: 100%;
+        }
+
+        @media (max-width: 600px) {
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+
+        /* Main content */
+        main {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+            letter-spacing: 1.5px;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: var(--border-color);
+        }
+
+        /* Projects */
+        .project {
+            margin-bottom: 45px;
+            padding-bottom: 45px;
+            border-bottom: 1px solid var(--border-color);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .project.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .project:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .project h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+        }
+
+        .project:hover h3 {
+            color: #000;
+        }
+
+        .project p {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 1.02rem;
+        }
+
+        .project-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            position: relative;
+            padding-right: 25px;
+            transition: var(--transition);
+        }
+
+        .project-link:after {
+            content: '→';
+            position: absolute;
+            right: 0;
+            top: 0;
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+
+        .project-link:hover {
+            color: #000;
+            padding-right: 30px;
+        }
+
+        .project-link:hover:after {
+            opacity: 1;
+            transform: translateX(5px);
+        }
+
+        /* Achievements */
+        .achievement {
+            margin-bottom: 25px;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: var(--transition);
+        }
+
+        .achievement.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .achievement h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .achievement p {
+            color: var(--secondary-color);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Notes */
+        .note {
+            margin-bottom: 40px;
+            padding: 25px;
+            background-color: var(--note-bg);
+            border-left: 4px solid var(--primary-color);
+            border-radius: 0 8px 8px 0;
+            opacity: 0;
+            transform: translateX(20px);
+            transition: var(--transition);
+        }
+
+        .note.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .note h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .note p {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        /* Contact */
+        #contact p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+
+        .social-links a {
+            color: var(--primary-color);
+            transition: var(--transition);
+            opacity: 0.7;
+        }
+
+        .social-links a:hover {
+            opacity: 1;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 100px;
+            text-align: center;
+            color: #999;
+            font-size: 0.9rem;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        /* Links */
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: #000;
+        }
+
+        /* Scroll progress indicator */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background-color: var(--primary-color);
+            z-index: 1000;
+            transition: width 0.2s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <header>
+        <h1>ALEX CHEN</h1>
+        <p class="subtitle">Designer & Developer</p>
+    </header>
+
+    <nav>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#notes">Notes</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+        <section id="projects">
+            <h2>Projects</h2>
+
+            <div class="project">
+                <h3>Nexus Journal</h3>
+                <p>A reading environment designed for deep focus. Removed 92% of UI clutter while improving reading retention in user tests. Built with vanilla JavaScript and modern CSS.</p>
+                <a href="#" class="project-link">View Project</a>
+            </div>
+
+            <div class="project">
+                <h3>Aurora CLI</h3>
+                <p>Terminal tool that visualizes git history as constellations. 4.8k GitHub stars. Solves the "where did my commit go?" problem through spatial memory and intuitive visualization.</p>
+                <a href="#" class="project-link">View Project</a>
+            </div>
+
+            <div class="project">
+                <h3>Veridian Protocol</h3>
+                <p>Open-source design system adopted by 3 municipal governments. Created token architecture that reduced UI debt by 70% across legacy applications while maintaining accessibility standards.</p>
+                <a href="#" class="project-link">View Project</a>
+            </div>
+        </section>
+
+        <section id="achievements">
+            <h2>Achievements</h2>
+
+            <div class="achievement">
+                <h3>Fast Company Innovation By Design</h3>
+                <p>2025 Finalist for civic technology work that improved public service accessibility</p>
+            </div>
+
+            <div class="achievement">
+                <h3>Google Summer of Code Mentor</h3>
+                <p>Guided 3 open-source contributors building accessibility tools for low-vision users</p>
+            </div>
+
+            <div class="achievement">
+                <h3>Stanford HCI Guest Lecturer</h3>
+                <p>2024 workshop on ethical minimalism in interface design and digital wellbeing</p>
+            </div>
+
+            <div class="achievement">
+                <h3>Adobe Creative Resident</h3>
+                <p>2023 program focusing on design systems and cross-platform consistency</p>
+            </div>
+        </section>
+
+        <section id="notes">
+            <h2>Notes</h2>
+
+            <div class="note">
+                <h3>On Design Thinking</h3>
+                <p>Design is not just about aesthetics; it's about solving problems elegantly. The best designs are those that users don't even notice because they work so seamlessly. When the interface disappears, the content shines.</p>
+            </div>
+
+            <div class="note">
+                <h3>On Development</h3>
+                <p>Clean code is like a well-written story. It should be easy to read, understand, and maintain. Always prioritize readability over cleverness. The best code is the code that doesn't need comments to explain what it does.</p>
+            </div>
+
+            <div class="note">
+                <h3>On Learning</h3>
+                <p>The most valuable skill is the ability to learn continuously. Technology changes rapidly, but the fundamentals of problem-solving remain constant. Stay curious, stay humble, and never stop building.</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Feel free to reach out for collaborations, speaking engagements, or just to say hello.</p>
+            <p><a href="mailto:hello@alexchen.dev">hello@alexchen.dev</a></p>
+            <div class="social-links">
+                <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/yourhandle" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Alex Chen. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Fade in elements on scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all project, achievement, and note elements
+            document.querySelectorAll('.project, .achievement, .note').forEach(item => {
+                observer.observe(item);
+            });
+
+            // Scroll progress indicator
+            const progressBar = document.getElementById('scrollProgress');
+            window.addEventListener('scroll', () => {
+                const scrollTop = document.documentElement.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (scrollTop / scrollHeight) * 100;
+                progressBar.style.width = scrolled + '%';
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
