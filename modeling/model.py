@@ -1,6 +1,6 @@
 import joblib
 from sklearn.linear_model import LogisticRegression
-
+import mlflow.pyfunc
 
 class RiskModel:
 
@@ -21,6 +21,6 @@ class RiskModel:
         joblib.dump(self.model, path)
         print(f"[RiskModel] Model saved to {path}")
 
-    def load(self, path="artifacts/model.pkl"):
-        self.model = joblib.load(path)
+    def load(self, path="models:/RiskDecisionModel/latest"):
+        model = mlflow.pyfunc.load_model(path)
         print(f"[RiskModel] Model loaded from {path}")
