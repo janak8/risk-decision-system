@@ -1,20 +1,23 @@
-# 🏦 Risk Decision System (ML API)
+#  Risk Decision System (ML API)
 
 This project is a machine learning-powered API that predicts whether a loan application is **high risk or low risk** based on user financial data.
 
 ---
 
-## 🚀 Features
+##  Features
 
 * Logistic Regression model for risk prediction
 * REST API built using FastAPI
 * Data preprocessing with feature scaling
 * Model persistence using joblib
 * Dockerized for easy deployment
+* MLflow experiment tracking
+* Model versioning
+* Production-ready API loading latest model
 
 ---
 
-## 🧠 How it Works
+##  How it Works
 
 User Input → Preprocessing → Model Prediction → Risk Decision
 
@@ -30,7 +33,7 @@ User Input → Preprocessing → Model Prediction → Risk Decision
 
 ---
 
-## ⚙️ Run Locally
+##  Run Locally
 
 ### 1. Clone the repository
 
@@ -53,7 +56,7 @@ python -m uvicorn api.app:app --reload
 
 ---
 
-## 📡 API Endpoint
+##  API Endpoint
 
 ### POST `/predict`
 
@@ -81,7 +84,7 @@ python -m uvicorn api.app:app --reload
 
 ---
 
-## 🐳 Docker
+##  Docker
 
 ### Build the image
 
@@ -97,7 +100,7 @@ docker run -p 8000:8000 risk-api
 
 ---
 
-## 📌 Future Improvements
+##  Future Improvements
 
 * Add model explainability (SHAP / feature importance)
 * Deploy on cloud (Render / AWS)
@@ -106,6 +109,6 @@ docker run -p 8000:8000 risk-api
 
 ---
 
-## 👨‍💻 Author
+##  Author
 
 Janak Adhikari
