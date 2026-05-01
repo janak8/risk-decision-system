@@ -21,6 +21,6 @@ class RiskModel:
         joblib.dump(self.model, path)
         print(f"[RiskModel] Model saved to {path}")
 
-    def load(self, path="models:/RiskDecisionModel/latest"):
+    def load(self, path="models:/RiskDecisionModel/Production"):
         model = mlflow.pyfunc.load_model(path)
         print(f"[RiskModel] Model loaded from {path}")

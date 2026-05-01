@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d532b9ba-6146-473d-b862-b9b4c9db045b" name="Changes" comment="">
+    <list default="true" id="d532b9ba-6146-473d-b862-b9b4c9db045b" name="Changes" comment="Added MLflow tracking and model registry">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/credit_risk_dataset.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/credit_risk_dataset.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artifacts/model.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/artifacts/model.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artifacts/scaler.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/artifacts/scaler.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modeling/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/modeling/model.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +26,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "janak8"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/janak8/risk-decision-system.git",
+    "accountId": "2d8952d4-a0ae-4c12-8be9-994621fecf1d"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -53,6 +66,7 @@
     "Python.main.executor": "Run",
     "Python.main2.executor": "Run",
     "Python.model_training.executor": "Run",
+    "Python.perfect_pipeline.executor": "Run",
     "Python.predict.executor": "Run",
     "Python.predictor.executor": "Run",
     "Python.scoring.executor": "Run",
@@ -118,6 +132,30 @@
       <option name="presentableId" value="Default" />
       <updated>1767973494966</updated>
     </task>
+    <task id="LOCAL-00001" summary="Added MLflow tracking and model registry">
+      <option name="closed" value="true" />
+      <created>1777396296377</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1777396296377</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added MLflow tracking and model registry" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added MLflow tracking and model registry" />
   </component>
 </project>
